@@ -1,0 +1,1388 @@
+None selected 
+
+Skip to content
+Using Gmail with screen readers
+Conversations
+(no subject)
+Inbox
+
+Thai Le
+Attachments6:52 PM (17 minutes ago)
+ 
+
+Thai Le <leqthai@gmail.com>
+Attachments
+7:09 PM (0 minutes ago)
+to me
+
+
+-------- Original message --------
+From: Thai Le <leqthai@gmail.com>
+Date: 9/4/25 6:52 PM (GMT-08:00)
+To: Thai Le <leqthai@gmail.com>
+Subject:
+
+ One attachment
+  •  Scanned by Gmail
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VietListUS</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    /* Base */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #fff;
+      color: #1d1d1f;
+      font-family: 'Roboto Condensed', Arial Narrow, sans-serif;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    /* Sticky header */
+    .hdr{
+      position: sticky; top: 0; z-index: 1000;
+      display: grid; grid-template-columns: 44px 1fr 72px;
+      align-items: center;
+      height: 56px;
+      padding: 0 12px;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+    .icon-btn{
+      width: 44px; height: 44px;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 20px; line-height: 1;
+      background: #fff; border: 1px solid #e5e7eb; border-radius: 10px;
+    }
+    .logo{
+      text-align: center;
+      font-weight: 800;
+      letter-spacing: .2px;
+      user-select: none;
+      color: inherit;
+      text-decoration: none;
+    }
+    .langs{ display: flex; gap: 8px; justify-content: flex-end; }
+    .lang{
+      width: 36px; height: 36px;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 18px; line-height: 1;
+      background: #fff; border: 1px solid #e5e7eb; border-radius: 999px;
+    }
+    .lang[aria-pressed="true"]{
+      border-color: #28a745;
+      box-shadow: 0 0 0 2px rgba(40,167,69,.12);
+    }
+
+    /* Account menu */
+    .acct-menu{
+      position: fixed; top: 56px; left: 12px;
+      background: #fff; border: 1px solid #e5e7eb; border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.12);
+      padding: 6px; width: 200px;
+      display: none; z-index: 1100;
+    }
+    .acct-menu.open{ display: block; }
+    .acct-menu a{
+      display: block; padding: 10px 12px; border-radius: 8px;
+      color: inherit; text-decoration: none; font-size: 15px;
+    }
+    .acct-menu a:hover{ background: #f7f7f7; }
+
+    /* Search */
+    .search{
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 12px; background: #fff; border-bottom: 1px solid #eee;
+    }
+    .search input{
+      height: 42px;
+      padding: 0 12px;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      font: inherit;
+      flex: 1; min-width: 100px;
+    }
+    .search-btn{
+      height: 42px; width: 44px;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #fff;
+      font-size: 18px; line-height: 1;
+      flex: 0 0 auto;
+    }
+
+    /* City dropdown */
+    .city-wrap{ position: relative; }
+    .city-pill{
+      height: 42px;
+      padding: 0 10px;
+      display: inline-flex; align-items: center; gap: 6px;
+      border: 1px solid #e5e7eb; border-radius: 10px;
+      background: #fff; font: inherit;
+      max-width: 45vw; overflow: hidden; text-overflow: ellipsis;
+    }
+    .city-pill .caret{ color:#666; transition: transform .15s ease; }
+    .city-pill[aria-expanded="true"] .caret{ transform: rotate(180deg); }
+    .city-panel{
+      position: absolute; top: 48px; left: 0; min-width: 180px;
+      background: #fff; border: 1px solid #e5e7eb; border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.12);
+      padding: 6px; z-index: 1200;
+    }
+    .city-panel[hidden]{ display:none; }
+    .city-opt{
+      display:block; width:100%; text-align:left;
+      height: 40px; padding: 0 10px; margin: 4px 0;
+      background:#fff; border:1px solid #e5e7eb; border-radius:8px;
+      font: inherit; color: inherit; white-space: nowrap;
+    }
+    .city-pill span{ white-space: nowrap; }
+
+    /* Categories (Home) */
+    .cats{ padding: 10px 12px; }
+    .cat{ margin: 6px 0; }
+    .cat-btn{
+      width: 100%; height: 44px; padding: 0 12px;
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      background: #fff; border: 1px solid #e5e7eb; border-radius: 10px;
+      font: inherit; font-weight: 700;
+    }
+    .cat-btn .label{ flex: 1; text-align: left; display:flex; align-items:center; gap:10px; }
+    .cat-btn .label i{ width:20px; text-align:center; color:#555; }
+    .cat-btn .caret{ color: #666; transition: transform .15s ease; }
+    .cat-btn[aria-expanded="true"] .caret{ transform: rotate(180deg); }
+    .cat-panel{
+      position: static;
+      margin-top: 4px;
+      background:#fff;
+      border:1px solid #e5e7eb;
+      border-radius:12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.08);
+      padding:8px;
+      max-height:60vh;
+      overflow:auto;
+      display:none;
+    }
+    .cat-btn[aria-expanded="true"] + .cat-panel{ display:block; }
+    .cat-panel a{
+      display:block; margin:6px 0; padding:10px 12px;
+      border:1px solid #e5e7eb; border-radius:10px; background:#fff;
+      text-decoration:none; color:inherit; font-size:15px;
+    }
+    .cat-panel a:hover{ background:#f7f7f7; }
+
+    /* App mount */
+    main#app { padding: 16px; }
+
+    /* Sticky submit button */
+    .fab-cta{
+      position: fixed; left: 50%; transform: translateX(-50%);
+      bottom: calc(16px + env(safe-area-inset-bottom));
+      background: #28a745; color: #fff; text-decoration: none;
+      padding: 14px 22px; border-radius: 999px; font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0,0,0,.18); z-index: 1300;
+    }
+    .fab-cta:active{ background:#218838; }
+
+    @media (max-width: 768px){ main#app{ padding-bottom: 96px; } }
+    @media (min-width: 769px){ .fab-cta{ display:none; } }
+
+    /* Listings page */
+    .toolbar{
+      display:flex; gap:8px; align-items:center; flex-wrap:wrap;
+      margin: 8px 0 12px;
+    }
+    .toolbar .spacer{ flex:1 }
+    .toolbar select{
+      height:36px; border:1px solid #e5e7eb; border-radius:8px; background:#fff; font:inherit; padding:0 10px;
+    }
+
+    .view-btn{
+      height:36px; min-width:36px;
+      padding:0 12px;
+      border:1px solid #e5e7eb;
+      border-radius:999px;
+      background:#fff;
+      display:inline-flex; align-items:center; justify-content:center;
+      font:inherit;
+    }
+    .view-btn i{ pointer-events:none; }
+    .view-btn.is-active,
+    .view-btn[aria-pressed="true"]{
+      border-color:#28a745;
+      box-shadow:0 0 0 2px rgba(40,167,69,.12);
+    }
+
+    /* List view */
+    .list{ display:flex; flex-direction:column; gap:10px; }
+    .row{
+      display:grid; grid-template-columns: 92px 1fr; gap:10px;
+      border:1px solid #e5e7eb; border-radius:12px; padding:8px;
+    }
+    .thumb{
+      width:92px; height:92px; border-radius:10px; background:#f2f2f2; overflow:hidden;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; }
+    .meta{ display:flex; flex-direction:column; gap:4px; }
+    .title{ font-weight:700; }
+    .sub{ color:#666; font-size:14px; }
+    .badges{ display:flex; gap:6px; flex-wrap:wrap; }
+    .badge{ border:1px solid #e5e7eb; border-radius:999px; padding:4px 8px; font-size:12px; }
+
+    /* Tile view */
+    .grid{
+      display:grid; gap:10px;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+
+    .card{
+      border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; background:#fff;
+      display:flex; flex-direction:column;
+    }
+    .card .img{ aspect-ratio: 4/3; background:#f2f2f2; }
+    .card .img img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .card .body{ padding:10px; display:flex; flex-direction:column; gap:6px; }
+    .price{ font-weight:700; }
+
+    /* Pagination */
+    .pager{ display:flex; gap:8px; align-items:center; justify-content:center; margin-top:14px; }
+    .pager a, .pager span{
+      border:1px solid #e5e7eb; border-radius:8px; padding:6px 10px; text-decoration:none; color:inherit;
+    }
+    .pager .current{ background:#f7f7f7; }
+
+    /* Simple content styling for other views */
+    .view-wrap{ padding: 10px 12px; }
+    .muted{ color:#666; }
+
+    /* Rounded sort dropdown (custom pill like city) */
+    .sort-wrap{ position: relative; display:inline-block; }
+    .sort-pill{
+      height:42px;
+      padding:0 12px;
+      display:inline-flex; align-items:center; gap:6px;
+      border:1px solid #e5e7eb; border-radius:999px;
+      background:#fff; font:inherit;
+    }
+    .sort-pill .caret{ color:#666; transition: transform .15s ease; }
+    .sort-pill[aria-expanded="true"] .caret{ transform: rotate(180deg); }
+    .sort-panel{
+      position:absolute; top:48px; left:0; min-width:220px;
+      background:#fff; border:1px solid #e5e7eb; border-radius:12px;
+      box-shadow:0 8px 24px rgba(0,0,0,.12);
+      padding:6px; z-index:1200;
+    }
+    .sort-panel[hidden]{ display:none; }
+    .sort-opt{
+      display:block; width:100%; text-align:left;
+      height:40px; padding:0 10px; margin:4px 0;
+      background:#fff; border:1px solid #e5e7eb; border-radius:8px;
+      font:inherit; color:inherit; white-space:nowrap;
+    }
+
+    /* Controls row */
+    .controls .lbl{ color:#666; font-size:14px; }
+    .controls{
+      display:flex; align-items:center; gap:10px;
+      flex-wrap: nowrap;
+      margin: 8px 0 10px;
+    }
+    .sort-wrap{ flex: 1 1 auto; min-width: 0; }
+    .sort-pill{ max-width: 100%; }
+    #sort-current{
+      display:inline-block;
+      max-width: 60vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .controls .view-group{
+      display:flex; gap:8px;
+      margin-left:auto;
+      flex: 0 0 auto;
+    }
+
+    /* Breadcrumbs */
+    .breadcrumbs{
+      font-size:14px; color:#666;
+      border-bottom:1px solid #eee;
+      padding:6px 0;
+      margin:-2px 0 6px;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+    .breadcrumbs .sep{ color:#aaa; margin:0 6px; }
+    .listings-wrap{ padding-top: 6px; }
+
+    /* Desktop notice */
+    @media (min-width: 1025px) {
+      #app, .hdr, .search, .fab-cta {
+        display: none !important;
+      }
+      .desktop-notice {
+        display: block;
+      }
+    }
+    .desktop-notice {
+      display: none;
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    /* Hide CTA by default */
+    .fab-cta {
+      display: none !important;
+    }
+    /* Show CTA only on home page */
+    body[data-route=""] .fab-cta,
+    body[data-route="/"] .fab-cta {
+      display: block !important;
+    }
+
+    /* ---- existing Step 2 field styles ---- */
+    .form-sec{ margin-top:14px; }
+    .field{ margin:10px 0; }
+    .field label{ display:block; font-size:14px; color:#444; margin-bottom:6px; }
+    .field input[type="text"],
+    .field input[type="number"],
+    .field select,
+    .field textarea{
+      width:100%;
+      padding:10px 12px;
+      border:1px solid #e5e7eb;
+      border-radius:10px;
+      font:inherit;
+    }
+    .fld-row{ display:flex; gap:10px; }
+    .fld-row .field{ flex:1; }
+
+    /* ---- NEW tiny helper ---- */
+    .hint{ font-size:12px; color:#777; margin-top:4px; }
+  </style>
+</head>
+<body>
+
+  <!-- Header (persists across routes) -->
+  <header class="hdr" role="banner">
+    <button id="btn-options" class="icon-btn" aria-label="Account options" aria-expanded="false">☰</button>
+    <a href="#/" class="logo" aria-label="VietListUS">VietListUS</a>
+    <div class="langs" role="group" aria-label="Language">
+      <button class="lang" data-lang="en" aria-pressed="true" title="English">🇺🇸</button>
+      <button class="lang" data-lang="vi" aria-pressed="false" title="Tiếng Việt">🇻🇳</button>
+    </div>
+  </header>
+
+  <!-- Search row (persists) -->
+  <form class="search" role="search" onsubmit="return false;">
+    <div class="city-wrap">
+      <button id="city-btn" class="city-pill" type="button" aria-haspopup="listbox" aria-expanded="false">
+        <span id="city-current">Select City</span> <span class="caret">▾</span>
+      </button>
+      <div id="city-panel" class="city-panel" role="listbox" hidden>
+        <button class="city-opt" role="option" type="button" data-value="San Jose">San Jose</button>
+        <button class="city-opt" role="option" type="button" data-value="Westminster">Westminster</button>
+        <button class="city-opt" role="option" type="button" data-value="Garden Grove">Garden Grove</button>
+        <button class="city-opt" role="option" type="button" data-value="Houston">Houston</button>
+        <button class="city-opt" role="option" type="button" data-value="Arlington">Arlington</button>
+      </div>
+    </div>
+
+    <input id="q" type="search" placeholder="Search listings…" aria-label="Search listings">
+    <button class="search-btn" type="submit" aria-label="Search">⌕</button>
+  </form>
+
+  <!-- Account menu (persists) -->
+  <nav id="account-menu" class="acct-menu" aria-label="Account menu">
+    <a href="#/signin">Sign In</a>
+    <a href="#/messages">Messages</a>
+    <a href="#/my-listings">My Listings</a>
+    <a href="#/saved">Saved</a>
+    <a href="#/settings">Settings</a>
+  </nav>
+
+  <!-- App mount: router injects views here -->
+  <main id="app" role="main"></main>
+  <div class="desktop-notice">
+    🚧 VietListUS is under construction for desktop.  
+    <br>
+    👉 Please use the live <b>mobile site</b> for the best experience.
+  </div>
+
+  <!-- Sticky submit: SPA route -->
+  <a href="#/submit" class="fab-cta" aria-label="Submit a listing">+ Submit Listing</a>
+
+  <!-- TEMPLATES (views) -->
+  <template id="tmpl-home">
+  <section class="cats" aria-label="Categories">
+    <!-- Community -->
+    <div class="cat">
+      <button class="cat-btn" data-panel="panel-community" aria-expanded="false">
+        <span class="label"><i class="fa-solid fa-people-group"></i> Cộng Đồng (Community)</span>
+        <span class="caret">▾</span>
+      </button>
+      <div id="panel-community" class="cat-panel" hidden>
+        <a href="#/listings?cat=Coupons%20%26%20Promotions">Coupons &amp; Promotions</a>
+        <a href="#/listings?cat=Events">Events</a>
+        <a href="#/listings?cat=Featured%20Restaurants">Featured Restaurants</a>
+        <a href="#/listings?cat=Free%20Classes">Free Classes</a>
+        <a href="#/listings?cat=Grand%20Opening">Grand Opening</a>
+        <a href="#/listings?cat=Lost%20Connections">Lost Connections</a>
+        <a href="#/listings?cat=News">News</a>
+        <a href="#/listings?cat=Volunteers">Volunteers</a>
+      </div>
+    </div>
+
+    <!-- Home Made Goods -->
+    <div class="cat">
+      <button class="cat-btn" data-panel="panel-homemade" aria-expanded="false">
+        <span class="label"><i class="fa-solid fa-basket-shopping"></i> Hàng Tự Làm (Home Made Goods)</span>
+        <span class="caret">▾</span>
+      </button>
+      <div id="panel-homemade" class="cat-panel" hidden>
+        <a href="#/listings?cat=Arts%20%26%20Crafts">Arts &amp; Crafts</a>
+        <a href="#/listings?cat=Food">Food</a>
+        <a href="#/listings?cat=Handmade%20Clothing">Handmade Clothing</a>
+        <a href="#/listings?cat=Health%20%26%20Beauty%20Products">Health &amp; Beauty Products</a>
+        <a href="#/listings?cat=Produce">Produce</a>
+      </div>
+    </div>
+
+    <!-- Housing -->
+    <div class="cat">
+      <button class="cat-btn" data-panel="panel-housing" aria-expanded="false">
+        <span class="label"><i class="fa-solid fa-house"></i> Nhà Ở (Housing)</span>
+        <span class="caret">▾</span>
+      </button>
+      <div id="panel-housing" class="cat-panel" hidden>
+        <a href="#/listings?cat=For%20Rent">For Rent</a>
+        <a href="#/listings?cat=For%20Sale">For Sale</a>
+        <a href="#/listings?cat=Parking">Parking</a>
+        <a href="#/listings?cat=Short%20Term%20Rental">Short Term Rental</a>
+        <a href="#/listings?cat=Storage">Storage</a>
+      </div>
+    </div>
+
+    <!-- For Sale -->
+    <div class="cat">
+      <button class="cat-btn" data-panel="panel-forsale" aria-expanded="false">
+        <span class="label"><i class="fa-solid fa-tags"></i> Mua Bán (For Sale)</span>
+        <span class="caret">▾</span>
+      </button>
+      <div id="panel-forsale" class="cat-panel" hidden>
+        <a href="#/listings?cat=Art%20%26%20Collectibles">Art &amp; Collectibles</a>
+        <a href="#/listings?cat=Clothing%20%26%20Accessories">Clothing &amp; Accessories</a>
+        <a href="#/listings?cat=Computers%20%26%20Electronics">Computers &amp; Electronics</a>
+        <a href="#/listings?cat=Free%20Stuff">Free Stuff</a>
+        <a href="#/listings?cat=Furniture%20%26%20Appliances">Furniture &amp; Appliances</a>
+        <a href="#/listings?cat=Garage%20%26%20Estate%20Sales">Garage &amp; Estate Sales</a>
+        <a href="#/listings?cat=Jewelry">Jewelry</a>
+        <a href="#/listings?cat=Kids%20%26%20Baby%20Stuff">Kids &amp; Baby Stuff</a>
+        <a href="#/listings?cat=Musical%20Instruments">Musical Instruments</a>
+        <a href="#/listings?cat=Sports%20%26%20Fitness%20Equipment">Sports &amp; Fitness Equipment</a>
+        <a href="#/listings?cat=Tools%20%26%20Equipment">Tools &amp; Equipment</a>
+        <a href="#/listings?cat=Trade%20%26%20Barter">Trade &amp; Barter</a>
+        <a href="#/listings?cat=Vehicle%20Parts">Vehicle Parts</a>
+        <a href="#/listings?cat=Vehicles">Vehicles</a>
+        <a href="#/listings?cat=Wanted">Wanted</a>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div class="cat">
+      <button class="cat-btn" data-panel="panel-services" aria-expanded="false">
+        <span class="label"><i class="fa-solid fa-briefcase"></i> Dịch Vụ (Services)</span>
+        <span class="caret">▾</span>
+      </button>
+      <div id="panel-services" class="cat-panel" hidden>
+        <a href="#/listings?cat=Art%20%26%20Design">Art &amp; Design</a>
+        <a href="#/listings?cat=Automotive">Automotive</a>
+        <a href="#/listings?cat=Babysitting">Babysitting</a>
+        <a href="#/listings?cat=Beauty">Beauty</a>
+        <a href="#/listings?cat=Car%20Wash">Car Wash</a>
+        <a href="#/listings?cat=Creative%20Services">Creative Services</a>
+        <a href="#/listings?cat=Electrical%20%26%20Plumbing">Electrical &amp; Plumbing</a>
+        <a href="#/listings?cat=Financial%20Services">Financial Services</a>
+        <a href="#/listings?cat=Health%20%26%20Wellness">Health &amp; Wellness</a>
+        <a href="#/listings?cat=Household">Household</a>
+        <a href="#/listings?cat=Legal%20%2F%20Paralegal">Legal / Paralegal</a>
+        <a href="#/listings?cat=Lessons%20%26%20Tutoring">Lessons &amp; Tutoring</a>
+        <a href="#/listings?cat=Moving%20%26%20Junk%20Removal">Moving &amp; Junk Removal</a>
+        <a href="#/listings?cat=Pet%20Services">Pet Services</a>
+        <a href="#/listings?cat=Phone%20%26%20Computer%20Repair">Phone &amp; Computer Repair</a>
+        <a href="#/listings?cat=Photography">Photography</a>
+        <a href="#/listings?cat=Real%20Estate%20Services">Real Estate Services</a>
+        <a href="#/listings?cat=Tailoring%20%26%20Alterations">Tailoring &amp; Alterations</a>
+        <a href="#/listings?cat=Transportation">Transportation</a>
+        <a href="#/listings?cat=Web%20Development%20%26%20IT%20Support">Web Development &amp; IT Support</a>
+      </div>
+    </div>
+
+    <!-- Jobs -->
+    <div class="cat">
+      <button class="cat-btn" data-panel="panel-jobs" aria-expanded="false">
+        <span class="label"><i class="fa-solid fa-user-tie"></i> Việc Làm (Jobs)</span>
+        <span class="caret">▾</span>
+      </button>
+      <div id="panel-jobs" class="cat-panel" hidden>
+        <a href="#/listings?cat=Accounting">Accounting</a>
+        <a href="#/listings?cat=Construction">Construction</a>
+        <a href="#/listings?cat=Creative%20%26%20Media">Creative &amp; Media</a>
+        <a href="#/listings?cat=Customer%20Service">Customer Service</a>
+        <a href="#/listings?cat=Education">Education</a>
+        <a href="#/listings?cat=Food%20%26%20Beverage">Food &amp; Beverage</a>
+        <a href="#/listings?cat=General%20Labor">General Labor</a>
+        <a href="#/listings?cat=Health%20Practitioners">Health Practitioners</a>
+        <a href="#/listings?cat=Hospitality">Hospitality</a>
+        <a href="#/listings?cat=Human%20Resources">Human Resources</a>
+        <a href="#/listings?cat=Legal%20%2F%20Paralegal">Legal / Paralegal</a>
+        <a href="#/listings?cat=Management">Management</a>
+        <a href="#/listings?cat=Manufacturing">Manufacturing</a>
+        <a href="#/listings?cat=Marketing">Marketing</a>
+        <a href="#/listings?cat=Medical">Medical</a>
+        <a href="#/listings?cat=Retail">Retail</a>
+        <a href="#/listings?cat=Sales">Sales</a>
+        <a href="#/listings?cat=Security">Security</a>
+        <a href="#/listings?cat=Skilled%20Trades">Skilled Trades</a>
+        <a href="#/listings?cat=Technology">Technology</a>
+        <a href="#/listings?cat=Work%20From%20Home%20%2F%20Remote">Work From Home / Remote</a>
+      </div>
+    </div>
+
+    <!-- Business -->
+    <div class="cat">
+      <button class="cat-btn" data-panel="panel-business" aria-expanded="false">
+        <span class="label"><i class="fa-solid fa-building"></i> Kinh Doanh (Business)</span>
+        <span class="caret">▾</span>
+      </button>
+      <div id="panel-business" class="cat-panel" hidden>
+        <a href="#/listings?cat=Business%20For%20Sale">Business For Sale</a>
+        <a href="#/listings?cat=Business%20Services">Business Services</a>
+        <a href="#/listings?cat=Consulting">Consulting</a>
+        <a href="#/listings?cat=Franchises">Franchises</a>
+        <a href="#/listings?cat=Investment%20Opportunities">Investment Opportunities</a>
+        <a href="#/listings?cat=Partnerships">Partnerships</a>
+        <a href="#/listings?cat=Resumes">Resumes</a>
+        <a href="#/listings?cat=Space%20For%20Lease">Space For Lease</a>
+      </div>
+    </div>
+  </section>
+</template>
+
+  <template id="tmpl-submit">
+    <div class="view-wrap">
+      <div class="breadcrumbs">
+        <span>Submit</span>
+      </div>
+
+      <form id="submit-form" onsubmit="return false;">
+        <!-- Step 1: Location -->
+        <h3 class="muted" style="margin:6px 0 8px;">Location</h3>
+        <div class="city-wrap">
+          <button id="sub-city-btn" class="city-pill" type="button" aria-haspopup="listbox" aria-expanded="false">
+            <span id="sub-city-current">Select City</span> <span class="caret">▾</span>
+          </button>
+          <div id="sub-city-panel" class="city-panel" role="listbox" hidden>
+            <button class="city-opt" role="option" type="button" data-value="San Jose">San Jose</button>
+            <button class="city-opt" role="option" type="button" data-value="Westminster">Westminster</button>
+            <button class="city-opt" role="option" type="button" data-value="Garden Grove">Garden Grove</button>
+            <button class="city-opt" role="option" type="button" data-value="Houston">Houston</button>
+            <button class="city-opt" role="option" type="button" data-value="Arlington">Arlington</button>
+          </div>
+        </div>
+
+        <!-- Step 1: Category → Subcategory -->
+        <h3 class="muted" style="margin:14px 0 8px;">Category</h3>
+
+        <!-- Category pill (gated; disabled until city chosen) -->
+        <div class="city-wrap" style="margin-bottom:8px;">
+          <button id="sub-cat-btn" class="city-pill" type="button" aria-haspopup="listbox" aria-expanded="false" disabled>
+            <span id="sub-cat-current">Choose a category</span> <span class="caret">▾</span>
+          </button>
+          <div id="sub-cat-panel" class="city-panel" role="listbox" hidden></div>
+        </div>
+
+        <!-- Subcategory pill (disabled until category) -->
+        <div class="city-wrap">
+          <button id="sub-subcat-btn" class="city-pill" type="button" aria-haspopup="listbox" aria-expanded="false" disabled>
+            <span id="sub-subcat-current">Choose a subcategory</span> <span class="caret">▾</span>
+          </button>
+          <div id="sub-subcat-panel" class="city-panel" role="listbox" hidden></div>
+        </div>
+
+        <!-- Step 2: Details (hidden until subcategory chosen) -->
+        <div id="submit-step2" class="form-sec" hidden>
+          <h3 class="muted" style="margin:14px 0 8px;">Listing Details</h3>
+
+          <div class="field">
+            <label for="sub-title">Title</label>
+            <input id="sub-title" type="text" placeholder="e.g., iPhone 13 Pro Max 256GB" autocomplete="off">
+          </div>
+
+          <div class="field">
+            <label for="sub-desc">Description</label>
+            <textarea id="sub-desc" rows="5" placeholder="Add a clear description, pickup/delivery, condition, etc."></textarea>
+          </div>
+
+          <div class="fld-row">
+            <div class="field">
+              <label for="sub-price">Price (optional)</label>
+              <input id="sub-price" type="number" inputmode="numeric" min="0" step="1" placeholder="e.g., 250">
+            </div>
+            <div class="field">
+              <label for="sub-condition">Condition (example)</label>
+              <select id="sub-condition">
+                <option value="">-- Select --</option>
+                <option>New</option>
+                <option>Like New</option>
+                <option>Good</option>
+                <option>Fair</option>
+                <option>For Parts</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- NEW: dynamic fields mount -->
+          <div id="sub-dyn"></div>
+          <div class="hint">Category-specific fields appear based on your selection.</div>
+        </div>
+
+        <p class="muted" style="margin-top:12px;">Next we’ll ask for photos & contact.</p>
+
+        <p style="margin-top:16px;"><a href="#/">← Cancel</a></p>
+      </form>
+    </div>
+  </template>
+
+  <template id="tmpl-listings">
+  <div class="view-wrap listings-wrap">
+    <div class="breadcrumbs">
+      <span id="crumb-cat">All</span>
+      <span class="sep">›</span>
+      <span id="crumb-subcat">All</span>
+    </div>
+
+    <div class="controls">
+      <span class="lbl">Sort:</span>
+
+      <div class="sort-wrap">
+        <button id="sort-btn" class="sort-pill" type="button" aria-haspopup="listbox" aria-expanded="false">
+          <span id="sort-current">Newest</span> <span class="caret">▾</span>
+        </button>
+        <div id="sort-panel" class="sort-panel" role="listbox" hidden>
+          <button class="sort-opt" type="button" role="option" data-value="newest">Newest</button>
+          <button class="sort-opt" type="button" role="option" data-value="oldest">Oldest</button>
+          <button class="sort-opt" type="button" role="option" data-value="priceAsc">Price: Low → High</button>
+          <button class="sort-opt" type="button" role="option" data-value="priceDesc">Price: High → Low</button>
+        </div>
+      </div>
+
+      <div class="view-group">
+        <button id="btn-view-list" class="view-btn is-active" title="List view" aria-pressed="true">
+          <i class="fa-solid fa-list"></i>
+        </button>
+        <button id="btn-view-tiles" class="view-btn" title="Tile view" aria-pressed="false">
+          <i class="fa-solid fa-border-all"></i>
+        </button>
+        <button id="btn-view-detail" class="view-btn" title="Detail view" aria-pressed="false">
+          <i class="fa-solid fa-id-card"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="ls-results" class="muted">No results. Try a different filter.</div>
+
+    <p><a href="#/">← Back to Home</a></p>
+  </div>
+</template>
+
+  <template id="tmpl-detail">
+  <div class="view-wrap">
+    <h2>Listing Detail</h2>
+    <div id="detailMount"></div>
+    <p><a href="#/listings">← Back to Listings</a></p>
+  </div>
+</template>
+<script>
+    
+  // ==================== MOCK DATA (now empty per request) ====================
+  const listings = [];
+
+  // ==================== SHARED CLOSE-ALL (single-open) ====================
+  function closeAllPanels(except = null) {
+    // Any element with [data-panel] (button) controlling a sibling panel with [data-popover]
+    document.querySelectorAll('[data-popover]').forEach(p => {
+      if (except && (p === except || p.contains(except))) return;
+      p.hidden = true;
+    });
+    document.querySelectorAll('[aria-haspopup="listbox"], .icon-btn, .sort-pill, .city-pill').forEach(btn => {
+      if (except && (btn === except || btn.contains(except))) return;
+      btn.setAttribute('aria-expanded','false');
+    });
+    // Account menu special
+    const acctMenu = document.getElementById('account-menu');
+    const acctBtn  = document.getElementById('btn-options');
+    if (acctMenu && acctBtn && (!except || (except!==acctMenu && !acctMenu.contains(except) && except!==acctBtn && !acctBtn.contains(except)))) {
+      acctMenu.classList.remove('open');
+      acctBtn.setAttribute('aria-expanded','false');
+    }
+  }
+
+  // ==================== PERSISTENT UI (header, city, account) ====================
+  const acctBtn  = document.getElementById('btn-options');
+  const acctMenu = document.getElementById('account-menu');
+  if (acctBtn && acctMenu) {
+    acctBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = acctMenu.classList.contains('open');
+      closeAllPanels(acctBtn); // ensure single-open
+      acctMenu.classList.toggle('open', !open);
+      acctBtn.setAttribute('aria-expanded', String(!open));
+    });
+  }
+
+  // City dropdown (header)
+  const cityBtn   = document.getElementById('city-btn');
+  const cityPanel = document.getElementById('city-panel');
+  const cityLabel = document.getElementById('city-current');
+  if (cityPanel) cityPanel.setAttribute('data-popover','');
+  let currentCity = '';
+
+  if (cityBtn && cityPanel && cityLabel) {
+    const savedCity = localStorage.getItem('vl_city');
+    currentCity = savedCity || '';
+    cityLabel.textContent = currentCity || 'Select City';
+
+    cityBtn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      const open = !cityPanel.hidden;
+      closeAllPanels(cityBtn);
+      cityPanel.hidden = open;
+      cityBtn.setAttribute('aria-expanded', String(!open));
+    });
+
+    cityPanel.addEventListener('click', (e)=>{
+      const opt = e.target.closest('.city-opt');
+      if (!opt) return;
+      const val = opt.dataset.value || '';
+      currentCity = val;
+      cityLabel.textContent = val || 'Select City';
+      localStorage.setItem('vl_city', val);
+      cityPanel.hidden = true;
+      cityBtn.setAttribute('aria-expanded','false');
+    });
+  }
+
+  // Close on outside click / ESC
+  document.addEventListener('click', (e) => {
+    // If click is not inside any known popover or toggle, close all
+    const isInsidePopover = e.target.closest('[data-popover]') || e.target.closest('[aria-haspopup]');
+    if (!isInsidePopover) closeAllPanels();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAllPanels();
+  });
+
+  // Language visual toggle
+  document.querySelectorAll('.lang').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      document.querySelectorAll('.lang').forEach(x=>x.setAttribute('aria-pressed','false'));
+      b.setAttribute('aria-pressed','true');
+    });
+  });
+
+  // ==================== ROUTER ====================
+  const app = document.getElementById('app');
+
+  function parseHash() {
+    const h = location.hash || '#/';
+    const [path, queryString] = h.split('?');
+    const params = new URLSearchParams(queryString || '');
+    return { path, params };
+  }
+
+  function render(route) {
+    app.innerHTML = '';
+    document.body.setAttribute('data-route', route.path.replace('#/', ''));
+    closeAllPanels();
+
+    switch (route.path) {
+      case '#/submit': {
+        const t = document.getElementById('tmpl-submit');
+        const frag = t.content.cloneNode(true);
+
+        // Submit: Location dropdown (pre-fill from browsing city or ?city)
+        const subCityBtn   = frag.querySelector('#sub-city-btn');
+        const subCityPanel = frag.querySelector('#sub-city-panel');
+        const subCityLabel = frag.querySelector('#sub-city-current');
+        if (subCityPanel) subCityPanel.setAttribute('data-popover','');
+
+        const formState = { city: '', cat: '', subcat: '' };
+        const initCity = (route.params.get('city') || currentCity || '');
+        formState.city = initCity;
+        if (subCityLabel) subCityLabel.textContent = initCity || 'Select City';
+
+        // Elements for category/subcategory gating
+        const catBtn   = frag.querySelector('#sub-cat-btn');
+        const catPanel = frag.querySelector('#sub-cat-panel');
+        const catLabel = frag.querySelector('#sub-cat-current');
+
+        const subBtn   = frag.querySelector('#sub-subcat-btn');
+        const subPanel = frag.querySelector('#sub-subcat-panel');
+        const subLabel = frag.querySelector('#sub-subcat-current');
+
+        if (catPanel) catPanel.setAttribute('data-popover','');
+        if (subPanel) subPanel.setAttribute('data-popover','');
+
+        // Step 2 container + dynamic area
+        const step2 = frag.querySelector('#submit-step2');
+        const dyn   = frag.querySelector('#sub-dyn');
+
+        // Gate Category based on city (non-empty)
+        catBtn.disabled = !formState.city;
+        // Subcategory stays disabled until category chosen
+        subBtn.disabled = true;
+        // Ensure Step 2 hidden on entry
+        if (step2) step2.hidden = true;
+
+        // Sub-city events
+        subCityBtn?.addEventListener('click', (e)=>{
+          e.stopPropagation();
+          const open = !(subCityPanel?.hidden ?? true);
+          closeAllPanels(subCityBtn);
+          if (subCityPanel) subCityPanel.hidden = open;
+          subCityBtn.setAttribute('aria-expanded', String(!open));
+        });
+
+        subCityPanel?.addEventListener('click', (e)=>{
+          const opt = e.target.closest('.city-opt');
+          if (!opt) return;
+          const val = opt.dataset.value || '';
+          formState.city = val;
+          subCityLabel.textContent = val || 'Select City';
+          localStorage.setItem('vl_city', val);
+          if (subCityPanel) subCityPanel.hidden = true;
+          subCityBtn?.setAttribute('aria-expanded','false');
+
+          // Update gates on city change
+          catBtn.disabled = !formState.city;
+          if (!formState.city) {
+            formState.cat = '';
+            formState.subcat = '';
+            catLabel.textContent = 'Choose a category';
+            subLabel.textContent = 'Choose a subcategory';
+            subBtn.disabled = true;
+            if (subPanel) subPanel.innerHTML = '';
+            if (dyn) dyn.innerHTML = '';
+            if (step2) step2.hidden = true;
+          }
+        });
+
+        // ====== Category → Subcategory data
+        const CAT_MAP = {
+          'Community': [
+            'Coupons & Promotions','Events','Featured Restaurants','Free Classes','Grand Opening','Lost Connections','News','Volunteers'
+          ],
+          'Home Made Goods': [
+            'Arts & Crafts','Food','Handmade Clothing','Health & Beauty Products','Produce'
+          ],
+          'Housing': [
+            'For Rent','For Sale','Parking','Short Term Rental','Storage'
+          ],
+          'For Sale': [
+            'Art & Collectibles','Clothing & Accessories','Computers & Electronics','Free Stuff','Furniture & Appliances','Garage & Estate Sales','Jewelry','Kids & Baby Stuff','Musical Instruments','Sports & Fitness Equipment','Tools & Equipment','Trade & Barter','Vehicle Parts','Vehicles','Wanted'
+          ],
+          'Services': [
+            'Art & Design','Automotive','Babysitting','Beauty','Car Wash','Creative Services','Electrical & Plumbing','Financial Services','Health & Wellness','Household','Legal / Paralegal','Lessons & Tutoring','Moving & Junk Removal','Pet Services','Phone & Computer Repair','Photography','Real Estate Services','Tailoring & Alterations','Transportation','Web Development & IT Support'
+          ],
+          'Jobs': [
+            'Accounting','Construction','Creative & Media','Customer Service','Education','Food & Beverage','General Labor','Health Practitioners','Hospitality','Human Resources','Legal / Paralegal','Management','Manufacturing','Marketing','Medical','Retail','Sales','Security','Skilled Trades','Technology','Work From Home / Remote'
+          ],
+          'Business': [
+            'Business For Sale','Business Services','Consulting','Franchises','Investment Opportunities','Partnerships','Resumes','Space For Lease'
+          ]
+        };
+
+        // Category-specific field definitions
+        const CAT_FIELDS = {
+          'Housing': [
+            { id:'hs-beds',  label:'Bedrooms', type:'number', attrs:{ min:0, step:1, placeholder:'e.g., 2' } },
+            { id:'hs-baths', label:'Bathrooms', type:'number', attrs:{ min:0, step:0.5, placeholder:'e.g., 1.5' } },
+            { id:'hs-size',  label:'Size (sq ft)', type:'number', attrs:{ min:0, step:1, placeholder:'e.g., 850' } }
+          ],
+          'For Sale': [
+            { id:'fs-brand', label:'Brand / Make (optional)', type:'text',  attrs:{ placeholder:'e.g., Apple' } },
+            { id:'fs-model', label:'Model (optional)',        type:'text',  attrs:{ placeholder:'e.g., iPhone 13 Pro' } }
+          ],
+          'Services': [
+            { id:'sv-type',  label:'Service Type', type:'text', attrs:{ placeholder:'e.g., Haircut, House Cleaning' } },
+            { id:'sv-mode',  label:'Mode', type:'select', options:['In-person','Remote','Hybrid'] },
+            { id:'sv-time',  label:'Availability', type:'select', options:['Weekdays','Weekends','Evenings','Flexible'] }
+          ],
+          'Jobs': [
+            { id:'jb-type',  label:'Employment Type', type:'select', options:['Full-time','Part-time','Contract','Temporary','Internship'] },
+            { id:'jb-rate',  label:'Pay (number)', type:'number', attrs:{ min:0, step:1, placeholder:'e.g., 25' } },
+            { id:'jb-unit',  label:'Pay Unit', type:'select', options:['/hour','/day','/week','/month','/year'] },
+            { id:'jb-remote',label:'Remote', type:'select', options:['No','Hybrid','Yes'] }
+          ],
+          'Business': [
+            { id:'bz-type',  label:'Opportunity Type', type:'select', options:['For Sale','Franchise','Partnership','Investment','Service'] }
+          ],
+          'Community': [
+            { id:'cm-date',  label:'When (optional)', type:'text', attrs:{ placeholder:'e.g., Sat 10/12 2–5pm' } },
+            { id:'cm-loc',   label:'Where (optional)', type:'text', attrs:{ placeholder:'Venue / address' } }
+          ],
+          'Home Made Goods': [
+            { id:'hm-medium',label:'Type', type:'text', attrs:{ placeholder:'e.g., Bánh mì, Crafts, Skincare' } }
+          ]
+        };
+
+        function fillCats() {
+          if (!catPanel) return;
+          catPanel.innerHTML = '';
+          Object.keys(CAT_MAP).forEach(name=>{
+            const b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'city-opt';
+            b.setAttribute('role','option');
+            b.dataset.value = name;
+            b.textContent = name;
+            catPanel.appendChild(b);
+          });
+        }
+        fillCats();
+
+        // Category dropdown (guarded)
+        catBtn?.addEventListener('click', (e)=>{
+          if (catBtn.disabled) return;
+          e.stopPropagation();
+          const open = !(catPanel?.hidden ?? true);
+          closeAllPanels(catBtn);
+          if (catPanel) catPanel.hidden = open;
+          catBtn.setAttribute('aria-expanded', String(!open));
+        });
+
+        // Choose category → enable subcategory + load options + clear step2 dyn
+        catPanel?.addEventListener('click', (e)=>{
+          const opt = e.target.closest('.city-opt');
+          if (!opt) return;
+          const val = opt.dataset.value || '';
+          const subPanel = frag.querySelector('#sub-subcat-panel');
+          formState.cat = val;
+          catLabel.textContent = val || 'Choose a category';
+          if (catPanel) catPanel.hidden = true;
+          catBtn?.setAttribute('aria-expanded','false');
+
+          // Reset and enable subcategory
+          formState.subcat = '';
+          subLabel.textContent = 'Choose a subcategory';
+          subBtn.disabled = !val;
+
+          if (subPanel) {
+            subPanel.innerHTML = '';
+            subPanel.setAttribute('data-popover','');
+            (CAT_MAP[val] || []).forEach(sc=>{
+              const b = document.createElement('button');
+              b.type = 'button';
+              b.className = 'city-opt';
+              b.setAttribute('role','option');
+              b.dataset.value = sc;
+              b.textContent = sc;
+              subPanel.appendChild(b);
+            });
+          }
+
+          // Hide Step 2 + clear dynamic
+          if (step2) step2.hidden = true;
+          if (dyn) dyn.innerHTML = '';
+        });
+
+        // Subcategory dropdown (guarded)
+        subBtn?.addEventListener('click', (e)=>{
+          if (subBtn.disabled) return;
+          e.stopPropagation();
+          const open = !(subPanel?.hidden ?? true);
+          closeAllPanels(subBtn);
+          if (subPanel) subPanel.hidden = open;
+          subBtn.setAttribute('aria-expanded', String(!open));
+        });
+
+        // Choose subcategory → reveal Step 2 and render dynamic fields for category
+        subPanel?.addEventListener('click', (e)=>{
+          const opt = e.target.closest('.city-opt');
+          if (!opt) return;
+          const val = opt.dataset.value || '';
+          formState.subcat = val;
+          subLabel.textContent = val || 'Choose a subcategory';
+          if (subPanel) subPanel.hidden = true;
+          subBtn?.setAttribute('aria-expanded','false');
+
+          // Show Step 2 now that subcategory is selected
+          if (step2) step2.hidden = !val;
+
+          // Render dynamic fields for selected category
+          if (dyn) {
+            dyn.innerHTML = '';
+            const defs = CAT_FIELDS[formState.cat] || [];
+            defs.forEach(def => {
+              const wrap = document.createElement('div');
+              wrap.className = 'field';
+
+              const label = document.createElement('label');
+              label.setAttribute('for', def.id);
+              label.textContent = def.label;
+
+              let input;
+              if (def.type === 'select') {
+                input = document.createElement('select');
+                input.id = def.id;
+                const first = document.createElement('option');
+                first.value = '';
+                first.textContent = '-- Select --';
+                input.appendChild(first);
+                (def.options || []).forEach(optVal=>{
+                  const o = document.createElement('option');
+                  o.textContent = optVal;
+                  o.value = optVal;
+                  input.appendChild(o);
+                });
+              } else {
+                input = document.createElement('input');
+                input.type = def.type || 'text';
+                input.id = def.id;
+                if (def.attrs) Object.entries(def.attrs).forEach(([k,v])=> input.setAttribute(k, v));
+              }
+
+              wrap.appendChild(label);
+              wrap.appendChild(input);
+              dyn.appendChild(wrap);
+            });
+          }
+        });
+
+        app.appendChild(frag);
+        break;
+      }
+      case '#/listings': {
+        const t = document.getElementById('tmpl-listings');
+        const frag = t.content.cloneNode(true);
+
+        // URL/state
+        const subcat = route.params.get('cat')  || '';
+        const view   = route.params.get('view') || (localStorage.getItem('vl_view') || 'list');
+        const sortQS = route.params.get('sort') || 'newest';
+        const cityQS = route.params.get('city') || currentCity || '';
+
+        // Breadcrumbs
+        const crumbCat  = frag.querySelector('#crumb-cat');
+        const crumbSub  = frag.querySelector('#crumb-subcat');
+        const decodedSub = decodeURIComponent(subcat || 'All');
+        let parentCat = 'All';
+        if (subcat) {
+          const hit = listings.find(x => x.subcategory === decodedSub);
+          if (hit) parentCat = hit.category;
+        }
+        if (crumbCat)  crumbCat.textContent  = parentCat;
+        if (crumbSub)  crumbSub.textContent  = decodedSub;
+
+        // Controls
+        const btnList   = frag.querySelector('#btn-view-list');
+        const btnTiles  = frag.querySelector('#btn-view-tiles');
+        const btnDetail = frag.querySelector('#btn-view-detail');
+        const results   = frag.querySelector('#ls-results');
+
+        // Sort elements
+        const sortBtn   = frag.querySelector('#sort-btn');
+        const sortPanel = frag.querySelector('#sort-panel');
+        const sortLabel = frag.querySelector('#sort-current');
+
+        if (sortPanel) sortPanel.setAttribute('data-popover','');
+
+        const SORT_LABELS = {
+          newest: 'Newest',
+          oldest: 'Oldest',
+          priceAsc: 'Price: Low → High',
+          priceDesc: 'Price: High → Low'
+        };
+        if (sortLabel) sortLabel.textContent = SORT_LABELS[sortQS] || 'Newest';
+
+        const setViewButtons = (v) => {
+          [btnList, btnTiles, btnDetail].forEach(b=>{
+            if (!b) return;
+            const on = (b === (v==='list'?btnList : v==='tiles'?btnTiles : btnDetail));
+            b.setAttribute('aria-pressed', String(on));
+            b.classList.toggle('is-active', on);
+          });
+        };
+        setViewButtons(view);
+
+        // Filter rows
+        let rows = listings.slice();
+        if (subcat) rows = rows.filter(r => r.subcategory === decodedSub);
+        if (cityQS) rows = rows.filter(r => r.city === cityQS);
+
+        // Search query from top bar
+        const q = (document.getElementById('q')?.value || '').trim().toLowerCase();
+        if (q) {
+          rows = rows.filter(r =>
+            r.title?.toLowerCase().includes(q) ||
+            (r.description||'').toLowerCase().includes(q)
+          );
+        }
+
+        // Sort
+        const toTime = d => new Date(d).getTime();
+        if (sortQS === 'newest') rows.sort((a,b)=> toTime(b.createdAt) - toTime(a.createdAt));
+        else if (sortQS === 'oldest') rows.sort((a,b)=> toTime(a.createdAt) - toTime(b.createdAt));
+        else if (sortQS === 'priceAsc') rows.sort((a,b)=> (a.price??Infinity) - (b.price??Infinity));
+        else if (sortQS === 'priceDesc') rows.sort((a,b)=> (b.price??-Infinity) - (a.price??-Infinity));
+
+        // Render current view
+        const resultsEl = results;
+        resultsEl.innerHTML = '';
+        resultsEl.classList.remove('list','grid'); // clean before injecting
+        if (view === 'tiles') resultsEl.appendChild(renderTiles(rows));
+        else if (view === 'detail') resultsEl.appendChild(renderDetailList(rows));
+        else resultsEl.appendChild(renderList(rows));
+
+        // Sort dropdown interactions
+        sortBtn?.addEventListener('click', (e)=>{
+          e.stopPropagation();
+          const open = !(sortPanel?.hidden ?? true);
+          closeAllPanels(sortBtn);
+          if (sortPanel) sortPanel.hidden = open;
+          sortBtn.setAttribute('aria-expanded', String(!open));
+        });
+        sortPanel?.querySelectorAll('.sort-opt').forEach(opt=>{
+          opt.addEventListener('click', ()=>{
+            const val = opt.dataset.value || 'newest';
+            sortLabel.textContent = SORT_LABELS[val] || 'Newest';
+            if (sortPanel) sortPanel.hidden = true;
+            sortBtn.setAttribute('aria-expanded','false');
+            routeTo('/listings', { cat: subcat, city: cityQS, view, sort: val });
+          });
+        });
+
+        // View buttons
+        btnList?.addEventListener('click', ()=>{
+          localStorage.setItem('vl_view','list');
+          routeTo('/listings', { cat: subcat, city: cityQS, view:'list',  sort: sortQS });
+        });
+        btnTiles?.addEventListener('click', ()=>{
+          localStorage.setItem('vl_view','tiles');
+          routeTo('/listings', { cat: subcat, city: cityQS, view:'tiles', sort: sortQS });
+        });
+        btnDetail?.addEventListener('click', ()=>{
+          localStorage.setItem('vl_view','detail');
+          routeTo('/listings', { cat: subcat, city: cityQS, view:'detail', sort: sortQS });
+        });
+
+        app.appendChild(frag);
+        break;
+      }
+      case '#/listing': {
+        const t = document.getElementById('tmpl-detail');
+        const frag = t.content.cloneNode(true);
+        const id = route.params.get('id') || '';
+        const mount = frag.querySelector('#detailMount');
+        const item = listings.find(x=>x.id===id);
+        if (!item) {
+          mount.innerHTML = '<p class="muted">Listing not found.</p>';
+        } else {
+          mount.appendChild(renderDetail(item));
+        }
+        app.appendChild(frag);
+        break;
+      }
+      case '#/':
+      default: {
+        const t = document.getElementById('tmpl-home');
+        const frag = t.content.cloneNode(true);
+        app.appendChild(frag);
+        bindHomeInteractions();
+        break;
+      }
+    }
+  }
+
+  // Render helpers
+  function renderList(rows){
+    const wrap = document.createElement('div');
+    wrap.className = 'list';
+    if (!rows.length){
+      wrap.innerHTML = '<p class="muted">No results. Try a different filter.</p>';
+      return wrap;
+    }
+    rows.forEach(r=>{
+      const row = document.createElement('a');
+      row.href = `#/listing?id=${encodeURIComponent(r.id)}`;
+      row.className = 'row';
+      row.innerHTML = `
+        <div class="thumb">${renderImg(r)}</div>
+        <div class="meta">
+          <div class="title">${escapeHTML(r.title || '')}</div>
+          <div class="sub">${escapeHTML(r.city || '')} · ${escapeHTML(r.subcategory || '')} ${r.price!=null ? '· <span class="price">$'+fmtPrice(r.price)+'</span>':''}</div>
+          <div class="badges">${renderBadges(r)}</div>
+        </div>
+      `;
+      wrap.appendChild(row);
+    });
+    return wrap;
+  }
+
+  function renderTiles(rows){
+    const grid = document.createElement('div');
+    grid.className = 'grid';
+    if (!rows.length){
+      grid.innerHTML = '<p class="muted">No results. Try a different filter.</p>';
+      return grid;
+    }
+    rows.forEach(r=>{
+      const card = document.createElement('a');
+      card.href = `#/listing?id=${encodeURIComponent(r.id)}`;
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="img">${renderImg(r)}</div>
+        <div class="body">
+          <div class="title">${escapeHTML(r.title || '')}</div>
+          <div class="sub">${escapeHTML(r.city || '')} · ${escapeHTML(r.subcategory || '')}</div>
+          ${r.price!=null ? `<div class="price">$${fmtPrice(r.price)}</div>`:''}
+          <div class="badges">${renderBadges(r)}</div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+    return grid;
+  }
+
+  function renderDetail(r){
+    const box = document.createElement('div');
+    box.className = 'card';
+    box.innerHTML = `
+      <div class="img">${renderImg(r, true)}</div>
+      <div class="body">
+        <div class="title">${escapeHTML(r.title || '')}</div>
+        <div class="sub">${escapeHTML(r.city || '')} · ${escapeHTML(r.subcategory || '')} ${r.price!=null ? '· <span class="price">$'+fmtPrice(r.price)+'</span>':''}</div>
+        <div class="badges" style="margin:6px 0">${renderBadges(r)}</div>
+        <p>${escapeHTML(r.description || '')}</p>
+      </div>
+    `;
+    return box;
+  }
+
+  function renderDetailList(rows){
+    const wrap = document.createElement('div');
+    wrap.className = 'list';
+    if (!rows.length){
+      wrap.innerHTML = '<p class="muted">No results. Try a different filter.</p>';
+      return wrap;
+    }
+    rows.forEach(r => wrap.appendChild(renderDetail(r)));
+    return wrap;
+  }
+
+  function renderImg(r, large=false){
+    const src = (r.images && r.images[0]) || 'https://picsum.photos/800/600';
+    return `<img src="${src}" alt="">`;
+  }
+
+  function renderBadges(r){
+    const xs = [];
+    if (r?.category === 'Housing') {
+      if (r.extra?.beds) xs.push(`${r.extra.beds} bd`);
+      if (r.extra?.baths) xs.push(`${r.extra.baths} ba`);
+    }
+    if (r?.category === 'For Sale') {
+      if (r.extra?.condition) xs.push(r.extra.condition);
+    }
+    if (r?.category === 'Jobs') {
+      if (r.extra?.type) xs.push(r.extra.type);
+    }
+    if (r?.category === 'Services') {
+      if (r.extra?.type) xs.push(r.extra.type);
+      if (r.extra?.time) xs.push(r.extra.time);
+      if (r.extra?.mode) xs.push(r.extra.mode);
+    }
+    if (r.extra?.size) xs.push(r.extra.size);
+    if (r.extra?.mileage) xs.push(r.extra.mileage);
+    return xs.map(t=>`<span class="badge">${escapeHTML(String(t))}</span>`).join('');
+  }
+
+  function fmtPrice(n){ return Number(n).toLocaleString(); }
+  function escapeHTML(s){ return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+  // Home interactions
+  function bindHomeInteractions() {
+    const buttons = app.querySelectorAll('.cat-btn');
+    const panels  = app.querySelectorAll('.cat-panel');
+    panels.forEach(p => p.setAttribute('data-popover',''));
+
+    function closeAllCats(exceptBtn){
+      buttons.forEach(b=>{
+        if (b !== exceptBtn) b.setAttribute('aria-expanded','false');
+      });
+      panels.forEach(p=>{
+        if (!exceptBtn || p !== document.getElementById(exceptBtn.getAttribute('data-panel'))) p.hidden = true;
+      });
+    }
+
+    buttons.forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        const id = btn.getAttribute('data-panel');
+        const panel = app.querySelector('#' + id);
+        if (!panel) return;
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        closeAllPanels(btn); // global single-open
+        closeAllCats(btn);   // local single-open for cat section
+        btn.setAttribute('aria-expanded', String(!isOpen));
+        panel.hidden = isOpen;
+      }, { capture:true });
+    });
+
+    document.addEventListener('click', (e)=>{
+      if (!app.contains(e.target)) return;
+      if (e.target.closest('.cats')) return;
+      closeAllCats(null);
+    });
+
+    if (currentCity){
+      app.querySelectorAll('.cat-panel a').forEach(a=>{
+        const url = new URL(a.getAttribute('href'), location.href);
+        const hash = url.hash || '';
+        const [path, qs] = hash.split('?');
+        const params = new URLSearchParams(qs || '');
+        params.set('city', currentCity);
+        a.setAttribute('href', path + '?' + params.toString());
+      });
+    }
+  }
+
+  // Router helpers
+  function routeTo(path, params){
+    const qs = new URLSearchParams();
+    Object.entries(params || {}).forEach(([k,v])=>{
+      if (v!=null && v!=='') qs.set(k, v);
+    });
+    const qstr = qs.toString();
+    location.hash = '#'+path + (qstr?('?'+qstr):'');
+  }
+
+  function onRouteChange() { render(parseHash()); }
+
+  window.addEventListener('hashchange', onRouteChange);
+  window.addEventListener('load', onRouteChange);
+</script>
+</body>
+</html>
+10.txt
+Displaying 10.txt.
